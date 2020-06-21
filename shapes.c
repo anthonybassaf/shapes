@@ -8,7 +8,10 @@ int main(int argc, char const *argv[])
 
     while(input != 5) {
 
-        printf("\n1-Filled Rectangle\n");
+        int Height;
+        int Width; 
+
+        printf("1-Filled Rectangle\n");
         printf("2-Empty Rectangle\n");
         printf("3-Filled Triangle\n");
         printf("4-Empty Triangle\n");
@@ -20,11 +23,36 @@ int main(int argc, char const *argv[])
         switch (input)
         {
         case 1:
-            printf("Option 1\n");
+            printf("Choose Height= ");
+            scanf("%d", &Height);
+            printf("Choose Width= c");
+            scanf("%d", &Width);
+
+            for (int row=0; row<Height; row++) {
+                for (int col=0; col<Width; col++) {
+                    printf("* ");
+                }
+                printf("\n");
+            }
             break;
            
         case 2:
-            printf("Option 2\n");
+            printf("Choose Height= ");
+            scanf("%d", &Height);
+            printf("Choose Width= ");
+            scanf("%d", &Width);
+
+            for (int row=0; row<Height; row++){
+                for (int col=0; col<Width; col++) {
+                    if(row==0 || row==Height-1 || col==0 || col==Width-1){
+                        printf("* ");
+                    }
+                    else {
+                        printf("  ");
+                    }
+                }
+                printf("\n");
+            }
             break;
 
         case 3:
