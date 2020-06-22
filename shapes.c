@@ -10,6 +10,7 @@ int main(int argc, char const *argv[])
 
         int Height;
         int Width; 
+        int center;
 
         printf("1-Filled Rectangle\n");
         printf("2-Empty Rectangle\n");
@@ -25,7 +26,7 @@ int main(int argc, char const *argv[])
         case 1:
             printf("Choose Height= ");
             scanf("%d", &Height);
-            printf("Choose Width= c");
+            printf("Choose Width= ");
             scanf("%d", &Width);
 
             for (int row=0; row<Height; row++) {
@@ -56,11 +57,45 @@ int main(int argc, char const *argv[])
             break;
 
         case 3:
-            printf("Option 3\n");
+            printf("Choose Height= ");
+            scanf("%d", &Height);
+
+            Width = (2 * (Height - 1)) + 1;
+            center = (Width-1)/2;
+
+             for (int row=0; row<Height; row++){
+                for (int col=0; col<Width; col++) {
+                    if(col==center-row || col==center+row || (col>center-row && col<center+row)) {
+                        printf("* ");
+                    }
+                    else {
+                        printf("  ");
+                    }
+                }
+                printf("\n");
+             }
+
+
             break;
 
         case 4:
-            printf("Option 4\n");
+            printf("Choose Height= ");
+            scanf("%d", &Height);
+
+            Width = (2 * (Height - 1)) + 1;
+            center = (Width-1)/2;
+
+             for (int row=0; row<Height; row++){
+                for (int col=0; col<Width; col++) {
+                    if(row==Height-1 || col==center-row || col==center+row) {
+                        printf("* ");
+                    }
+                    else {
+                        printf("  ");
+                    }
+                }
+                printf("\n");
+             }
             break;
 
         case 5:
